@@ -1,17 +1,23 @@
 import style from "./style.module.scss";
-import Input from "../Input/Input";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({title, paragraph, image, count}) => {
-    console.log();
-    return(
-        <div className={style.card}>
-        <div>
-            <img src ={image} alt="React Logo" />
-        </div>
-        <h4>{title}</h4>
-        <p>{paragraph}</p>
-        < Input value = {count} />
+const Card = ({title, paragraph, image, price}) => {
+    return (
+        <div className={style.container}>
+            <div className={style.card}>
+                <img src={image} alt={title} />
+
+                <div className={style.content}>
+                    <h4>{title}</h4>
+                    <p>{paragraph}</p>
+                    <div className={style.priceContainer}>
+                        <div className={style.price}>
+                            <span> {price} сом </span> 
+                        </div>
+                        <button className={style.addToCartBtn}>Add to Cart</button>
+                    </div> 
+                </div>
+            </div>        
         </div>
     );
 };
